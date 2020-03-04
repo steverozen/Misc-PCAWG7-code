@@ -1,3 +1,32 @@
+###########################################################################
+###########################################################################
+# Gaddy gram plot functions
+# 
+# v0.1
+# 
+# An alpha version; code used to plot the "snake plots" a.k.a.
+# "Gaddy grams" as seen for example at 
+# https://cancer.sanger.ac.uk/cosmic/signatures/SBS/SBS1.tt
+# 
+# Copyright (C) 2018-2020 Steven G. Rozen and Mi Ni Huang
+# 
+# The code is released under GPL-3
+# https://www.gnu.org/licenses/gpl-3.0.en.html
+# you can redistribute it and/or modify it under the terms of the
+# GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option)
+# any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# Contact: steverozen@gmail.com
+###########################################################################
+###########################################################################
+
+
 merge.cancers <- function(expr.data){
   sample.names <- expr.data$Sample.Names
   sample.names <- gsub('Bone-Epith', 'Bone-Other', sample.names)
