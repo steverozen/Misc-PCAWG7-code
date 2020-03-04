@@ -1,0 +1,64 @@
+---
+title: "Matrix plot example"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+Copyright (C) 2018 Steven G. Rozen and Mi Ni Huang
+ 
+The code is released under GPL-3
+https://www.gnu.org/licenses/gpl-3.0.en.html
+you can redistribute it and/or modify it under the terms of the
+GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.
+ 
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+Contact: steverozen@gmail.com
+
+
+## Set current working directory to the matrix-plot folder
+```{r}
+CURRENT <- paste(getwd(),"/",sep="")
+INPUT <- paste(CURRENT,"example_input/",sep="") ### Directory for INPUT data
+```
+## Load matrix plot functions
+See documentations for functions in "matrix_plot_functions_v0.1.R"
+```{r}
+source('matrix_plot_functions_v0.1.R')
+```
+## Load PCAWG WGS assignment and signature aetiologies
+```{r}
+load(paste0(INPUT, 'PCAWG_Sigprofiler_assignment.RData'))
+load(paste0(INPUT,'PCAWG_Sigprofiler_aetiology.RData'))
+```
+## Filter for samples with > 0.9 accuracy and 100 mutations
+```{r}
+filtered.exp.data <- filter.samples(exp.data)
+```
+## Generate matrices for plotting
+```{r}
+all.mats <- exp.data.to.mats(filtered.exp.data)
+```
+## Define mutation rate breaks
+```{r}
+mut.rate.ref <- c(0.0, 0.05, 0.1, 0.25, 0.5, 1, 2.5, 5, 10, 25)
+names(mut.rate.ref) <- mut.rate.ref
+```
+## Plot matrix: adjust the size of the pdf based on the size of input matrices 
+```{r}
+cairo_pdf('example_output_matrix.pdf',  width=11.2677, height=10.6929)
+par(mar=c(3.2, 2.7, 3.3, 23.2))
+## remove sig 27, 43, 45 ~ 60: likely aritfact
+mat1 <- all.mats$sample.proportion.mat[-c(32,48,50:65),]
+mat2 <- all.mats$mut.median.load.mat[-c(32,38,50:65),]
+cancer.names<-sort(colnames(mat1))
+matrix.plot(mat1, mat2, all.mats$n.samples, etiology, mut.rate.ref=mut.rate.ref, 
+            cancer.names=cancer.names, size.legend=TRUE, color.legend='right')
+dev.off()
+```
