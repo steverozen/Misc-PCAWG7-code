@@ -19,6 +19,6 @@ Some tumours were excluded from the plots:
 
 * For DBSs (doublet base substitutions) and IDs (small insertions and deletions) we required >= 25 total mutations.
 
-* In addition, for the snake plots for SBSs, we required >= 10 mutations per signatures.
+* In addition, for the snake plots for SBSs, we required >= 10 mutations per signature.
 
 There was also some merging of cancer types.
