@@ -5,7 +5,8 @@ GPL-3 license
 
 There are two code files:
 
-* matrix_plot/matrix_plot_functions_v0.1.R, for plotting figures such as Fig 3 in https://www.nature.com/articles/s41586-020-1943-3.
+* matrix_plot/matrix_plot_functions_v0.1.R, for plotting figures such as Fig 3 in https://www.nature.com/articles/s41586-020-1943-3. 
+The folder also contains example input and output.
 
 * gaddy-gram.R, for plotting figure such as the "snake plots", a.k.a. "hamburger plots" a.k.a "Gaddy grams" at 
 e.g https://cancer.sanger.ac.uk/cosmic/signatures/SBS/SBS1.tt.
