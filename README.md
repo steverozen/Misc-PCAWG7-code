@@ -1,6 +1,6 @@
 # Misc-PCAWG7-code
 
-Code for plotting mutational signature attribtions and mutation loads 
+Code for plotting mutational signature attributions and mutation loads 
 from "The Repertoire of Mutational Signatures in Human Cancer, https://www.nature.com/articles/s41586-020-1943-3
 
 GPL-3 license
