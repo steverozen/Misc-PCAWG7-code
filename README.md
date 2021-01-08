@@ -11,7 +11,7 @@ The folder also contains example input and output.
 * gaddy-gram.R, for plotting figures such as the "snake plots", a.k.a. "hamburger plots" a.k.a "Gaddy grams" at 
 e.g https://cancer.sanger.ac.uk/cosmic/signatures/SBS/SBS1.tt.
 
-The raw data plotted are in the .csv files at https://www.synapse.org/#!Synapse:syn11804040. However, Some tumours were excluded from the plots:
+The raw data plotted in the paper are in the .csv files at https://www.synapse.org/#!Synapse:syn11804040. However, Some tumours were excluded from the plots:
 
 * For all tumors and mutation types we required > 0.9 reconstruction accuracy.
 
@@ -21,5 +21,4 @@ The raw data plotted are in the .csv files at https://www.synapse.org/#!Synapse:
 
 * In addition, for the snake plots for SBSs, we required >= 10 mutations per signature.
 
-* There was also some merging of cancer types.
-
+We also merged (combibined) some cancer types.
